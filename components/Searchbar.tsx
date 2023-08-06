@@ -8,7 +8,7 @@ export default function Searchbar() {
         <FormControl className="
             p-8 rounded-md relative bottom-24 bg-white flex gap-4 flex-col md:flex-row
         ">
-            <Select>
+            <Select size={'lg'}>
                 <option value="AL">Alabama</option>
                 <option value="AK">Alaska</option>
                 <option value="AZ">Arizona</option>
@@ -61,8 +61,8 @@ export default function Searchbar() {
                 <option value="WI">Wisconsin</option>
                 <option value="WY">Wyoming</option>
             </Select>
-            <Input placeholder="Search for national park"/>
-            <Button size={'md'} className="px-8 py-4 bg-green-800 text-white">Search</Button>
+            <Input placeholder="Search for national park" size={'lg'}/>
+            <Button size={'lg'} className="px-8 py-4 bg-green-800 text-white">Search</Button>
         </FormControl>
     </div>
   )

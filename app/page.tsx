@@ -1,4 +1,5 @@
 import Hero from '@/app/components/Hero'
+import FourCard from '@/components/FourCard'
 import ParkCard from '@/components/ParkCard'
 import Searchbar from '@/components/Searchbar'
 
@@ -7,6 +8,7 @@ export default function Home() {
     <main className="min-h-screen ">
       <Hero></Hero>
       <Searchbar />
+      <FourCard />
     </main>
   )
 }
