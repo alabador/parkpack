@@ -6,7 +6,7 @@ const josefin = Josefin_Sans({subsets: ['latin']})
 
 export default function Navbar() {
   return (
-    <header className="flex justify-between items-center bg-white px-6 py-4">
+    <header className={`flex justify-between items-center bg-white px-6 py-4 ${josefin.className}`}>
         <div className="flex flex-col justify-center items-center">
             <Link href='/'>
               <Image src="/ParkPack.png" width={75} height={50} alt="ParkPack logo of tent and backpack" />
@@ -14,8 +14,8 @@ export default function Navbar() {
             </Link>
         </div>
         <nav className="flex gap-4">
-            <Link href='/parks'>Parks</Link>
-            <Link href='/activities'>Activities</Link>
+            <Link href='/parks'>PARKS</Link>
+            <Link href='/activities'>ACTIVITIES</Link>
         </nav>
     </header>
   )
