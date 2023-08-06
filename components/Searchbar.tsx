@@ -4,7 +4,7 @@ import { Button, FormControl, Input, Select } from "@chakra-ui/react";
 
 export default function Searchbar() {
   return (
-    <div className="p-8">
+    <div className="p-8 pb-0">
         <FormControl className="
             p-8 rounded-md relative bottom-24 bg-white flex gap-4 flex-col md:flex-row
         ">
