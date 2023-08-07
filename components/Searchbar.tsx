@@ -1,14 +1,32 @@
 'use client'
 
 import { Button, FormControl, Input, Select } from "@chakra-ui/react";
+import { ChangeEvent, FormEvent, useState } from "react";
 
 export default function Searchbar() {
+  const [formData, setFormData] = useState({
+    state: '',
+    park: ''
+  });
+
+  function handleInputChange(e: ChangeEvent<HTMLInputElement>) {
+    console.log(e.target.value)
+  }
+
+  function handleSelectChange(e: ChangeEvent<HTMLSelectElement>) {
+    console.log(e.target.value)
+  }
+
+  function handleSubmit(e:FormEvent) {
+    e.preventDefault();
+
+  }
   return (
     <div className="p-8 pb-0">
         <FormControl className="
             p-8 rounded-md relative bottom-24 bg-white flex gap-4 flex-col md:flex-row
         ">
-            <Select size={'lg'}>
+            <Select size={'lg'} onChange={handleSelectChange}>
                 <option value="AL">Alabama</option>
                 <option value="AK">Alaska</option>
                 <option value="AZ">Arizona</option>
@@ -61,7 +79,7 @@ export default function Searchbar() {
                 <option value="WI">Wisconsin</option>
                 <option value="WY">Wyoming</option>
             </Select>
-            <Input placeholder="Search for national park" size={'lg'}/>
+            <Input placeholder="Search for national park" size={'lg'} onChange={handleInputChange}/>
             <Button size={'lg'} className="px-8 py-4 bg-green-800 text-white">Search</Button>
         </FormControl>
     </div>
