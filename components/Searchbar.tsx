@@ -30,12 +30,12 @@ export default function Searchbar() {
   }
 
   function handleSubmit(e: FormEvent) {
-    e.preventDefault();
+    // e.preventDefault();
     console.log(formData.state, formData.park);
   }
   return (
-    <div className="p-8 pb-0">
-      <form onSubmit={handleSubmit}>
+    <div className="p-8 xl:px-24 pb-0">
+      <form onSubmit={handleSubmit} action={`/parks`} method="get">
         <FormControl
           className="
             p-8 rounded-md relative bottom-24 bg-white flex gap-4 flex-col md:flex-row
