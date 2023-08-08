@@ -10,7 +10,7 @@ export default function Hero() {
             <h2 className="mt-8 text-md sm:text-lg">Plan your next trip to one of over 400+ national parks in the United States. </h2>
         </div>
         <div className="flex gap-8 w-full justify-center pt-8">
-          <Link href="/parks" className="border-green-800 border-2 p-4 hover:bg-green-900 hover:border-transparent">Visit a Park</Link>
+          <Link href="/parks" className="bg-green-800 rounded-md font-bold p-4 hover:bg-slate-300 hover:border-transparent transition duration-150">Visit a Park</Link>
           {/* <Link href="/activities" className="border-green-800 border-2 p-4">Activities</Link> */}
         </div>
     </section>

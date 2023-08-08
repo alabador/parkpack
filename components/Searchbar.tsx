@@ -3,6 +3,7 @@
 import { Button, FormControl, Input, Select } from "@chakra-ui/react";
 import { ChangeEvent, FormEvent, useState } from "react";
 
+
 export default function Searchbar() {
   const [formData, setFormData] = useState({
     state: "",
