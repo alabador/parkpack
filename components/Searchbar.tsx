@@ -10,11 +10,25 @@ export default function Searchbar() {
   });
 
   function handleInputChange(e: ChangeEvent<HTMLInputElement>) {
-    console.log(e.target.value)
+    console.log(e.target.name)
+    const {name, value} = e.target
+    setFormData((prevFormData) => {
+      return {
+        ...prevFormData,
+        [name]: value
+      }
+    })
   }
 
   function handleSelectChange(e: ChangeEvent<HTMLSelectElement>) {
-    console.log(e.target.value)
+    console.log(e.target.name)
+    const {name, value} = e.target
+    setFormData((prevFormData) => {
+      return {
+        ...prevFormData,
+        [name]: value
+      }
+    })
   }
 
   function handleSubmit(e:FormEvent) {
@@ -26,7 +40,7 @@ export default function Searchbar() {
         <FormControl className="
             p-8 rounded-md relative bottom-24 bg-white flex gap-4 flex-col md:flex-row
         ">
-            <Select size={'lg'} onChange={handleSelectChange}>
+            <Select size={'lg'} onChange={handleSelectChange} name="state">
                 <option value="AL">Alabama</option>
                 <option value="AK">Alaska</option>
                 <option value="AZ">Arizona</option>
@@ -79,9 +93,11 @@ export default function Searchbar() {
                 <option value="WI">Wisconsin</option>
                 <option value="WY">Wyoming</option>
             </Select>
-            <Input placeholder="Search for national park" size={'lg'} onChange={handleInputChange}/>
+            <Input placeholder="Search for national park" size={'lg'} onChange={handleInputChange} name="park"/>
             <Button size={'lg'} className="px-8 py-4 bg-green-800 text-white">Search</Button>
         </FormControl>
+        <p>{formData.state}</p>
+        <p>{formData.park}</p>
     </div>
   )
 }
