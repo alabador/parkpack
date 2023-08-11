@@ -1,6 +1,7 @@
 "use client";
 
 import { Button, FormControl, Input, Select } from "@chakra-ui/react";
+import { useRouter } from "next/navigation";
 import { ChangeEvent, FormEvent, useState } from "react";
 
 
@@ -9,6 +10,8 @@ export default function Searchbar() {
     state: "",
     park: "",
   });
+
+  const router = useRouter();
 
   function handleInputChange(e: ChangeEvent<HTMLInputElement>) {
     const { name, value } = e.target;
@@ -33,10 +36,11 @@ export default function Searchbar() {
   function handleSubmit(e: FormEvent) {
     // e.preventDefault();
     console.log(formData.state, formData.park);
+    // router.push('/parks')
   }
   return (
     <div className="p-8 xl:px-24 pb-0">
-      <form onSubmit={handleSubmit} action={`/parks`} method="get">
+      <form onSubmit={handleSubmit} action={'/parks'}>
         <FormControl
           className="
             p-8 rounded-md relative bottom-24 bg-white flex gap-4 flex-col md:flex-row

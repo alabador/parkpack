@@ -1,9 +1,18 @@
 import Searchbar from "@/components/Searchbar";
+import SearchDisplay from "./components/SearchDisplay";
 
-export default function Parks() {
+interface searchQueries {
+  state: string;
+  park: string;
+}
+
+export default function Parks({searchParams}: {searchParams:searchQueries}) {
   return (
     <div className="min-h-screen">
-      <Searchbar />
+      {/* <Searchbar /> */}
+      <SearchDisplay />
+      <p>{searchParams.state}</p>
+      <p>{searchParams.park}</p>
     </div>
   )
 }
