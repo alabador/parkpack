@@ -1,15 +1,15 @@
 'use client'
 
 import { usePathname } from "next/navigation"
-import { useSearchParams } from "next/navigation"
 
-export default function SearchDisplay() {
+export default function SearchDisplay({stateSearch, parkSearch}: 
+    {stateSearch:string, parkSearch: string}) {
     const pathname = usePathname()
-    const searchParams = useSearchParams()
 
     return (
-        <div>
-            <p>Current pathname: {pathname}</p>
+        <div className="flex flex-col justify-center items-center ">
+            <p>{stateSearch}</p>
+            <p>{parkSearch}</p>
         </div>
     )
 }

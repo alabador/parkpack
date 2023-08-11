@@ -43,7 +43,7 @@ export default function Searchbar({offset}: {offset: string}) {
       <form onSubmit={handleSubmit} action={'/parks'}>
         <FormControl
           className={`
-            p-8 rounded-md relative bottom-${offset} bg-white flex gap-4 flex-col md:flex-row
+            p-8 rounded-md relative ${offset} bg-white flex gap-4 flex-col md:flex-row
         `}
         >
           <Select size={"lg"} onChange={handleSelectChange} name="state">
