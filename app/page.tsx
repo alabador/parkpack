@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <main className="min-h-screen ">
       <Hero></Hero>
-      <Searchbar />
+      <Searchbar offset='24'/>
       <FourCard />
     </main>
   )

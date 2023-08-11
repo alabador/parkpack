@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { ChangeEvent, FormEvent, useState } from "react";
 
 
-export default function Searchbar() {
+export default function Searchbar({offset}: {offset: string}) {
   const [formData, setFormData] = useState({
     state: "",
     park: "",
@@ -42,9 +42,9 @@ export default function Searchbar() {
     <div className="p-8 xl:px-24 pb-0">
       <form onSubmit={handleSubmit} action={'/parks'}>
         <FormControl
-          className="
-            p-8 rounded-md relative bottom-24 bg-white flex gap-4 flex-col md:flex-row
-        "
+          className={`
+            p-8 rounded-md relative bottom-${offset} bg-white flex gap-4 flex-col md:flex-row
+        `}
         >
           <Select size={"lg"} onChange={handleSelectChange} name="state">
             <option value="AL">Alabama</option>
@@ -114,8 +114,6 @@ export default function Searchbar() {
           </Button>
         </FormControl>
       </form>
-      <p>{formData.state}</p>
-      <p>{formData.park}</p>
     </div>
   );
 }
