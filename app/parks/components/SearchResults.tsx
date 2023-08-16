@@ -1,13 +1,20 @@
 import GetData from "@/api/GetData"
+import SearchCard from "./SearchCard"
 
 
-interface parkInfo {
+export interface parkInfo {
   total: string
   limit: string
   start: string
   data: [
     {
-      fullName: string
+      fullName: string,
+      images: [
+        {
+          url: string,
+          altText: string,
+        }
+      ]
     }
   ]
 
@@ -20,7 +27,7 @@ export default async function SearchResults({stateSearch, parkSearch}:
     const data:parkInfo = await GetData(baseUrl)
     return (
       <div>
-        {data.data[0].fullName}
+        <SearchCard data={data}/>
       </div>
     )
 }
