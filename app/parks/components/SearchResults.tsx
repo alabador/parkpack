@@ -22,6 +22,9 @@ export interface searchInfo {
 
 export interface parkInfo {
   fullName: string,
+  description: string,
+  states: string,
+  parkCode: string,
   images: [
     {
       url: string,
@@ -36,7 +39,7 @@ export default async function SearchResults({stateSearch, parkSearch}:
     const baseUrl:string = `https://developer.nps.gov/api/v1/parks?q=${parkSearch}&api_key=${process.env.API_KEY}`
     const data:searchInfo = await GetData(baseUrl)
     return (
-      <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center py-8 px-8 md:px-12 lg:px-16">
+      <section className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 justify-items-center py-8 px-8 md:px-12 lg:px-16">
         {data.data.map((park:parkInfo) => (
           <SearchCard key={park.fullName} info={park}/>
         ))}
